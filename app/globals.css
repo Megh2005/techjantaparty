@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+:root {
+  --neon-pink: #ff69b4;
+  --neon-green: #00ffaa;
+  --neon-blue: #00bfff;
+  --neon-yellow: #ffff00;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .text-neon-pink {
+    color: var(--neon-pink);
+  }
+  .text-neon-green {
+    color: var(--neon-green);
+  }
+  .text-neon-blue {
+    color: var(--neon-blue);
+  }
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+  }
+
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+  .bg-neon-blue {
+    background-color: var(--neon-blue);
+  }
+  .bg-neon-yellow {
+    background-color: var(--neon-yellow);
+  }
+
+  .border-neon-pink {
+    border-color: var(--neon-pink);
+  }
+  .border-neon-green {
+    border-color: var(--neon-green);
+  }
+  .border-neon-blue {
+    border-color: var(--neon-blue);
+  }
+  .border-neon-yellow {
+    border-color: var(--neon-yellow);
+  }
+}
+
