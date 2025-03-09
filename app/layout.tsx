@@ -60,10 +60,10 @@ export default function RootLayout({
         />
         <link
           rel="shortcut icon"
-          href="/favicon.ico"
+          href="https://res.cloudinary.com/dx1netxd5/image/upload/v1741494918/DALL_E_2025-03-09_09.01.56_-_A_vibrant_colorful_circular-shaped_logo_for_Tech_Janta_Party_._The_design_should_be_modern_and_sleek_reflecting_innovation_and_technology._It_shoul-modified_wxquhn.png"
           type="image/x-icon"
         />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="https://res.cloudinary.com/dx1netxd5/image/upload/v1741494918/DALL_E_2025-03-09_09.01.56_-_A_vibrant_colorful_circular-shaped_logo_for_Tech_Janta_Party_._The_design_should_be_modern_and_sleek_reflecting_innovation_and_technology._It_shoul-modified_wxquhn.png" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
