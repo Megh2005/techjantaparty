@@ -60,7 +60,7 @@ export default function AchievementsPage() {
         <h1 className="text-5xl md:text-7xl font-black mb-12 text-neon-pink">ACHIEVEMENTS</h1>
 
         <p className="text-xl max-w-3xl mb-16 text-gray-300">
-          We're proud of the recognition our work has received. Here are some of our notable achievements and awards.
+          We are proud of the recognition our work has received. Here are some of our notable achievements and awards.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">

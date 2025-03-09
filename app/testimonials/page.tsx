@@ -80,7 +80,7 @@ export default function TestimonialsPage() {
         <h1 className="text-5xl md:text-7xl font-black mb-12 text-neon-green">TESTIMONIALS</h1>
 
         <p className="text-xl max-w-3xl mb-16 text-gray-300">
-          Don't just take our word for it. Here's what our clients have to say about working with Tech Janta Party.
+          Don&apos;t just take our word for it. Here is what our clients have to say about working with Tech Janta Party.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
@@ -90,7 +90,7 @@ export default function TestimonialsPage() {
               className={`bg-gray-900 p-8 border-4 border-${testimonial.color} shadow-[8px_8px_0px_0px_${testimonial.shadowColor}]`}
             >
               <Quote className={`w-12 h-12 text-${testimonial.color} mb-6`} />
-              <p className="text-gray-300 mb-8 text-lg italic">"{testimonial.quote}"</p>
+              <p className="text-gray-300 mb-8 text-lg italic">{testimonial.quote}</p>
               <div>
                 <h3 className="text-xl font-bold text-white">{testimonial.name}</h3>
                 <p className={`text-${testimonial.color}`}>
@@ -104,7 +104,7 @@ export default function TestimonialsPage() {
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-8 text-neon-blue">READY TO JOIN OUR SUCCESS STORIES?</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-            Let's work together to bring your vision to life and create solutions that make a difference.
+            Let&apos;s work together to bring your vision to life and create solutions that make a difference.
           </p>
           <a
             href="/contact"

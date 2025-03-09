@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="bg-gray-900 p-10 border-4 border-neon-yellow shadow-[8px_8px_0px_0px_rgba(255,255,0,0.8)] mb-16">
           <h2 className="text-3xl font-bold mb-6 text-neon-yellow">Our Expertise</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Our team's diverse expertise spans a wide array of cutting-edge technologies, including:
+            Our team has diverse expertise spans a wide array of cutting-edge technologies, including:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xl">
             <li className="flex items-center text-gray-300">
@@ -58,7 +58,7 @@ export default function AboutPage() {
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-8 text-neon-blue">JOIN US ON OUR JOURNEY</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-            We're always looking for like-minded individuals who share our passion for technology and making a
+            We are always looking for like-minded individuals who share our passion for technology and making a
             difference.
           </p>
           <a
