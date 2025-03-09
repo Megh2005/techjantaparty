@@ -107,11 +107,11 @@ export default function ProjectsPage() {
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-8 text-neon-green">HAVE A PROJECT IN MIND?</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-            We're always excited to take on new challenges and create innovative solutions.
+            We are always excited to take on new challenges and create innovative solutions.
           </p>
           <Link href="/contact">
             <Button className="bg-neon-green hover:bg-neon-green/90 text-black font-bold text-lg py-6 px-8 rounded-none transform hover:translate-y-[-4px] hover:translate-x-[4px] transition-transform border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)]">
-              Let's Work Together
+              Let&apos;s Work Together
             </Button>
           </Link>
         </div>
