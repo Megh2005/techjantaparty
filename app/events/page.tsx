@@ -14,6 +14,7 @@ interface Event {
   color: string
   shadowColor: string
   registrationOpen: boolean
+  link: string
 }
 
 export default function EventsPage() {
@@ -31,20 +32,37 @@ export default function EventsPage() {
       color: "neon-blue",
       shadowColor: "rgba(0,191,255,0.8)",
       registrationOpen: true,
+      link: "https://lu.ma/km3mlr2f"
     },
     {
       id: 2,
-      title: "Tech Innovation Summit",
+      title: "Binary Hackathon",
       description:
-        "An upcoming conference featuring industry leaders discussing the latest trends in AI, blockchain, and web development. Network with professionals and gain valuable insights.",
-      date: "April 22, 2025",
-      time: "9:00 AM - 5:00 PM IST",
-      location: "Tech Hub, Bangalore",
+        "An in-person hackathon where you can build and showcase your projects. Network with other developers, learn new skills, and win exciting prizes.",
+      date: "March 29, 2025",
+      time: "9:00 AM  IST",
+      location: "Kalyani Govt. Engineering College, Kalyani, West Bengal",
       isVirtual: false,
       isUpcoming: true,
       color: "neon-pink",
+      link: "https://www.hackquest.io/hackathons/BINARY?utm=zig_shadow",
       shadowColor: "rgba(255,105,180,0.8)",
-      registrationOpen: false,
+      registrationOpen: true,
+    },
+    {
+      id: 3,
+      title: "Hack Tropica Hackathon",
+      description:
+        "An in-person hackathon where you can build and showcase your projects. Network with other developers, learn new skills, and win exciting prizes.",
+      date: "April 04, 2025",
+      time: "10:00 AM  IST",
+      location: "Asansol Engineering College, Asansol, West Bengal",
+      isVirtual: false,
+      isUpcoming: true,
+      color: "neon-green",
+      link: "https://hacktropicatech.devfolio.co/",
+      shadowColor: "[#00ffaa]",
+      registrationOpen: true,
     },
   ]
 
@@ -95,11 +113,13 @@ export default function EventsPage() {
 
                 <div className="w-full md:w-1/3 flex flex-col justify-center">
                   {event.registrationOpen ? (
-                    <Button
+                    <Link target="_blank" href={event.link}>
+                      <Button
                       className={`bg-${event.color} hover:bg-${event.color}/90 text-black font-bold text-lg py-6 px-8 rounded-none transform hover:translate-y-[-4px] hover:translate-x-[4px] transition-transform border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)] w-full`}
-                    >
+                      >
                       Register Now
-                    </Button>
+                      </Button>
+                    </Link>
                   ) : (
                     <div className="text-center">
                       <p className="text-gray-300 mb-4">Registration opening soon</p>

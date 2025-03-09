@@ -48,6 +48,15 @@ export default function TeamPage() {
       shadowColor: "rgba(255,255,0,0.8)",
       avatar: "https://res.cloudinary.com/dx1netxd5/image/upload/v1741498747/DSC09534_toai7v.jpg"
     },
+    {
+      id: 5,
+      name: "Subrata Das",
+      role: "Design Lead",
+      bio: "Bringing ideas to life through creative design and visual storytelling that captivates audiences.",
+      color: "neon-pink",
+      shadowColor: "rgba(255,105,180,0.8)",
+      avatar: "https://res.cloudinary.com/dx1netxd5/image/upload/v1741545958/WhatsApp_Image_2025-03-10_at_00.15.25_b44d673d_m4ijj7.jpg"
+    },
   ]
 
   return (
@@ -92,7 +101,7 @@ export default function TeamPage() {
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-8 text-neon-pink">WANT TO JOIN OUR TEAM?</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
-            We're always on the lookout for talented individuals who share our vision and passion.
+            We are re always on the lookout for talented individuals who share our vision and passion.
           </p>
           <a
             href="/contact"
