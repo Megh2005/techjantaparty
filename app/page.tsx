@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col">
