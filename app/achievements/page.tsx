@@ -93,13 +93,13 @@ export default function AchievementsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="p-6">
-              <div className="text-4xl font-black text-neon-pink mb-4">10+</div>
+              <div className="text-4xl font-black text-neon-pink mb-4">20+</div>
               <p className="text-gray-300">Successful Projects Delivered</p>
             </div>
 
             <div className="p-6">
-              <div className="text-4xl font-black text-neon-blue mb-4">5,000+</div>
-              <p className="text-gray-300">Users Impacted</p>
+              <div className="text-4xl font-black text-neon-blue mb-4">50+</div>
+              <p className="text-gray-300">Companies Impacted</p>
             </div>
 
             <div className="p-6">

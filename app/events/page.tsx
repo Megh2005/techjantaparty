@@ -142,7 +142,7 @@ export default function EventsPage() {
           <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
             Subscribe to our newsletter to receive updates about our upcoming events and activities.
           </p>
-          <Link href="/contact">
+          <Link href="#footer">
             <Button className="bg-neon-green hover:bg-neon-green/90 text-black font-bold text-lg py-6 px-8 rounded-none transform hover:translate-y-[-4px] hover:translate-x-[4px] transition-transform border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)]">
               Subscribe Now
             </Button>
