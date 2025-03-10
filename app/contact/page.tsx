@@ -7,26 +7,69 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Send, Mail, Phone, MapPin } from "lucide-react"
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from "@/lib/Firebase"
+import toast from "react-hot-toast"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  interface ContactFormData {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+  }
+
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   })
+
+  // Status states
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitSuccess, setSubmitSuccess] = useState<boolean | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Here you would typically send the data to your backend
-    alert("Thanks for your message! We'll get back to you soon.")
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    setIsSubmitting(true);
+    setSubmitSuccess(null);
+    setErrorMessage('');
+
+    try {
+      await addDoc(collection(db, "enquiries"), {
+        ...formData,
+        createdAt: new Date()
+      });
+
+      console.log(formData)
+
+      // Reset form on success
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+      toast.success("Message sent successfully!");
+
+      setSubmitSuccess(true);
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      setErrorMessage('Failed to submit form. Please try again later.');
+      setSubmitSuccess(false);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -71,6 +114,8 @@ export default function ContactPage() {
           <div className="bg-gray-900 p-8 border-4 border-neon-yellow shadow-[8px_8px_0px_0px_rgba(255,255,0,0.8)]">
             <h2 className="text-2xl font-bold mb-6 text-neon-yellow">Send Us a Message</h2>
 
+            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-white mb-2">
@@ -102,6 +147,21 @@ export default function ContactPage() {
               </div>
 
               <div>
+                <label htmlFor="phone" className="block text-white mb-2">
+                  Phone
+                </label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="bg-gray-800 border-2 border-white text-white rounded-none h-12"
+                />
+              </div>
+
+              <div>
                 <label htmlFor="subject" className="block text-white mb-2">
                   Subject
                 </label>
@@ -125,17 +185,29 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-gray-800 border-2 border-white text-white rounded-none min-h-[150px]"
+                  className="bg-gray-800 border-2 resize-none border-white text-white rounded-none min-h-[150px]"
                 />
               </div>
 
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="bg-neon-yellow hover:bg-neon-yellow/90 text-black font-bold text-lg py-6 px-8 rounded-none transform hover:translate-y-[-4px] hover:translate-x-[4px] transition-transform border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,0.8)] w-full"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="ml-2 h-5 w-5" />
               </Button>
+              {submitSuccess && (
+                <div className="bg-green-900/50 border-2 border-green-500 text-green-300 p-4 mb-6">
+                  Thank you for your message! We&apos;ll get back to you soon.
+                </div>
+              )}
+
+              {submitSuccess === false && (
+                <div className="bg-red-900/50 border-2 border-red-500 text-red-300 p-4 mb-6">
+                  {errorMessage}
+                </div>
+              )}
             </form>
           </div>
         </div>
@@ -143,4 +215,3 @@ export default function ContactPage() {
     </main>
   )
 }
-

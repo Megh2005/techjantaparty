@@ -6,22 +6,53 @@ import { FaTwitter, FaYoutube, FaInstagram, FaGithub } from "react-icons/fa"
 import { Button } from "./ui/button";
 import { Mail, Send } from "lucide-react";
 import { Input } from "./ui/input";
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { db } from "@/lib/Firebase";
 
 export default function Footer() {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     if (email) {
-      toast.success(`Subscribed With Email: ${email}`)
-      setIsSubscribed(true)
-      setTimeout(() => {
-        setIsSubscribed(false)
-        setEmail("")
-      }, 10000)
+      try {
+        setIsSubmitting(true);
+
+        // Check if email already exists
+        const subscribersRef = collection(db, "maillist");
+        const q = query(subscribersRef, where("email", "==", email));
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          // Email already exists
+          toast.error("This email is already subscribed to our newsletter!");
+          setIsSubmitting(false);
+          return;
+        }
+
+        // Add document to Firestore newsletter collection
+        await addDoc(collection(db, "maillist"), {
+          email: email,
+          subscribedAt: new Date(),
+        });
+
+        toast.success(`Subscribed With Email: ${email}`)
+        setIsSubscribed(true)
+        setTimeout(() => {
+          setIsSubscribed(false)
+          setEmail("")
+        }, 10000)
+      } catch (error) {
+        console.error("Error subscribing to newsletter:", error);
+        toast.error("Failed to subscribe. Please try again later.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   }
+
   return (
     <footer id="footer" className="bg-gray-900 text-white py-12 border-t-4 border-neon-pink">
       <div className="container mx-auto px-4">
@@ -50,13 +81,15 @@ export default function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   <Button
                     type="submit"
+                    disabled={isSubmitting}
                     className="bg-neon-yellow hover:bg-neon-yellow/90 h-11 text-black font-bold rounded-none transform hover:translate-y-[-2px] hover:translate-x-[2px] transition-transform border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,0.8)]"
                   >
-                    Subscribe
+                    {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -130,4 +163,3 @@ export default function Footer() {
     </footer>
   )
 }
-
