@@ -12,7 +12,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-black mb-6 mt-10 text-neon-pink">TECH JANTA PARTY</h1>
           <p className="text-xl md:text-2xl mx-auto capitalize font-bold max-w-3xl sm:max-w-6xl mb-8 text-gray-300">
             A forward-thinking and dynamic group of innovators united by a shared commitment to solving impactful
-            real-world challenges.
+            real-world challenges
           </p>
           <div className="flex flex-wrap justify-center gap-8">
             <Link href="/services">
@@ -43,7 +43,7 @@ export default function Home() {
           <div className="bg-gray-900 p-8 border-4 border-neon-green shadow-[8px_8px_0px_0px_rgba(0,255,170,0.8)]">
             <h3 className="text-2xl font-bold mb-4 text-neon-green">AI Solutions</h3>
             <p className="text-gray-300">
-              Leveraging artificial intelligence and machine learning to solve complex problems and create innovative
+              Leveraging AI and ML to solve complex problems and create innovative
               solutions.
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-black mb-8 text-neon-green">BUILDING SOLUTIONS THAT MATTER</h2>
           <p className="text-xl max-w-3xl mx-auto text-gray-300">
             Through dedication, creativity, and a relentless pursuit of excellence, we are focused on creating
-            meaningful, lasting change in the world.
+            meaningful, lasting change in the world
           </p>
         </div>
 
