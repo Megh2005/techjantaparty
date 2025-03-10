@@ -89,7 +89,7 @@ export default function ContactPage() {
                 <Mail className="w-8 h-8 text-neon-pink mr-4" />
                 <div>
                   <h3 className="text-xl font-bold text-neon-pink">Email</h3>
-                  <p className="text-gray-300">info@techjantaparty.com</p>
+                  <p className="text-gray-300">techjantaparty@gmail.com</p>
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <Phone className="w-8 h-8 text-neon-green mr-4" />
                 <div>
                   <h3 className="text-xl font-bold text-neon-green">Phone</h3>
-                  <p className="text-gray-300">+91 123 456 7890</p>
+                  <p className="text-gray-300">+91 86174 23359</p>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 <MapPin className="w-8 h-8 text-neon-blue mr-4" />
                 <div>
                   <h3 className="text-xl font-bold text-neon-blue">Location</h3>
-                  <p className="text-gray-300">Tech Hub, Innovation Street, Digital City, India</p>
+                  <p className="text-gray-300">Tech Hub, Digital City, India</p>
                 </div>
               </div>
             </div>
