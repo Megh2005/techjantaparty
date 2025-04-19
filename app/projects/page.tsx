@@ -16,17 +16,17 @@ interface Project {
 
 export default function ProjectsPage() {
   const projects: Project[] = [
-    {
-      id: 1,
-      title: "Med-o-Next",
-      description:
-        "An intelligent virtual assistant that helps patients manage their healthcare needs, schedule appointments, and receive personalized health recommendations.",
-      category: "AI Solutions",
-      color: "neon-green",
-      shadowColor: "rgba(0,255,170,0.8)",
-      preview: "https://res.cloudinary.com/dx1netxd5/image/upload/v1741501773/Screenshot_2025-03-09_115910_xkge7s.png",
-      link: "https://med-o-next.vercel.app",
-    },
+    // {
+    //   id: 1,
+    //   title: "Med-o-Next",
+    //   description:
+    //     "An intelligent virtual assistant that helps patients manage their healthcare needs, schedule appointments, and receive personalized health recommendations.",
+    //   category: "AI Solutions",
+    //   color: "neon-green",
+    //   shadowColor: "rgba(0,255,170,0.8)",
+    //   preview: "https://res.cloudinary.com/dx1netxd5/image/upload/v1741501773/Screenshot_2025-03-09_115910_xkge7s.png",
+    //   link: "https://med-o-next.vercel.app",
+    // },
     {
       id: 2,
       title: "Skillable",
